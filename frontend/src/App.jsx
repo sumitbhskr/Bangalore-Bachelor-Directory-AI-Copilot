@@ -16,21 +16,12 @@ import Dashboard from "./pages/Dashboard";
 
 // ── Inner app (needs context access) ────────────────────────
 function Inner() {
-  const { page, showAuth, selectedListing, navigate } = useApp();
+  const { page, showAuth, selectedListing,  } = useApp();
 
   // Track browse initial filters separately (non-listing data)
   const [browseInit, setBrowseInit] = useState({});
 
-  // Intercept navigate to capture browse filter seed
-  const wrappedNavigate = React.useCallback(
-    (pg, data) => {
-      if (pg === "browse" && data && typeof data === "object" && !data._id) {
-        setBrowseInit(data);
-      }
-      navigate(pg, data);
-    },
-    [navigate],
-  );
+ 
 
   // Provide wrappedNavigate to children via a thin override context is complex;
   // simpler: HomePage / Footer call navigate directly from context (works fine).
