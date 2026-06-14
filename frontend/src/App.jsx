@@ -19,7 +19,7 @@ function Inner() {
   const { page, showAuth, selectedListing,  } = useApp();
 
   // Track browse initial filters separately (non-listing data)
-  const [browseInit, setBrowseInit] = useState({});
+  const [browseInit] = useState({});
 
  
 
