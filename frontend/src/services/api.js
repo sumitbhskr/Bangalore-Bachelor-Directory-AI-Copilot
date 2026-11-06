@@ -1,6 +1,5 @@
-// src/services/api.js
-
-const API_BASE = "http://localhost:5000/api";
+// frontend/src/services/api.js
+import { API_BASE } from "../config";
 
 const api = {
   get: async (path, token) => {
