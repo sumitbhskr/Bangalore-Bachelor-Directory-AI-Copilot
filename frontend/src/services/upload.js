@@ -1,5 +1,5 @@
-// src/services/upload.js
-const API_BASE = "http://localhost:5000/api";
+// frontend/src/services/upload.js
+import { API_BASE } from "../config";
 
 // Upload images via backend (which sends to Cloudinary)
 export const uploadImages = async (files, token) => {
